@@ -1,0 +1,4 @@
+generate hash using online tool
+
+john --format=raw-md5 hash.txt
+john --format=raw-sha256 hash.txt

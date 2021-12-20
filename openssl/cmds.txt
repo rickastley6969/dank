@@ -1,0 +1,56 @@
+Worksheet (Answer the following ques and paste the relevant outputs)
+1.    Create a plaintext. txt file with your name and regno 
+
+2.    Encrypt using aes in all block cipher modes of operation.
+openssl aes-128-cbc -e  -in plain.txt -out cipher.bin -k "password" -nosalt
+
+3.    Display the contents of cipher.bin
+
+
+4.    Decrypt the contents of cipher.bin
+openssl-1.1\x64\bin>openssl aes-128-cbc -d  -in cipher1.bin -out pt.txt -k "password" –nosalt
+
+
+5.    Display the contents of pt.txt
+
+6.    Examine Avalanche effect by changing one bit/charater in your plain text file
+
+
+7.    Generate private and public key for RSA
+openssl genrsa –out pvtkey.pem
+openssl rsa -pubout -in pvtkey.pem -out pubkey.pem
+
+Private Key Command and Output:
+
+
+Public Key Command and Output:
+openssl rsa -pubout -in pvtkey.pem -out pubkey.pem
+
+
+8.    Display the private key in hexadecimal
+openssl rsa -text -in pvtkey.pem
+
+
+9.    Perform encryption using RSA public key
+openssl rsautl -encrypt -in plain.txt -pubin -inkey pubkey.pem -out c1.bin
+
+10.    Display the contents of encrypted file
+
+
+11.    Decrypt the result  using RSA private key
+openssl rsautl -decrypt -in c1.bin  -inkey pvtkey.pem -out dec1.txt
+
+12.    Display the contents of decrypted file
+
+
+13.    Generate the hash of a file using MD5
+openssl md5 plain.txt
+
+14.    Generate the hash of a file using SHA256
+Openssl SHA256 plain.txt
+
+15.    Generate Signature using SHA and RSA
+openssl dgst -sha1 -sign pvtkey.pem -out s.bin plain.txt
+
+16.    Verify the signature
+openssl dgst -sha1 -verify pubkey.pem -signature s.bin plain.txt
